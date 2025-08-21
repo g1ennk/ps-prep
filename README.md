@@ -1,4 +1,4 @@
-##  Coding Test Preparation (Java)
+##  ps-prep
 
 이 저장소는 코딩테스트 문제 풀이를 정리한 레포지토리입니다.  
 
