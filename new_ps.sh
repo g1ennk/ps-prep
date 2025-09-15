@@ -70,6 +70,7 @@ public class ${CLASS_NAME} {
         // TODO: 문제 풀이 작성
 
         bw.flush();
+        bw.close();
     }
 }
 EOF
