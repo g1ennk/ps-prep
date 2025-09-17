@@ -3,7 +3,7 @@ set -euo pipefail
 
 SRC_ROOT="src"
 PKG_BASE="barkingDog"
-SECTION="x03"
+SECTION="x04"
 FORCE=0
 
 usage() {
@@ -70,7 +70,6 @@ public class ${CLASS_NAME} {
         // TODO: 문제 풀이 작성
 
         bw.flush();
-        bw.close();
     }
 }
 EOF
