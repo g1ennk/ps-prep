@@ -1,4 +1,4 @@
-package barkingDog.x005_stack;
+package barkingDog.x05_stack;
 
 import java.util.ArrayDeque;
 
