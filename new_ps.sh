@@ -3,7 +3,7 @@ set -euo pipefail
 
 SRC_ROOT="src"
 PKG_BASE="barkingDog"
-SECTION="x07_deck"
+SECTION="x08_more_stack"
 FORCE=0
 
 usage() {
