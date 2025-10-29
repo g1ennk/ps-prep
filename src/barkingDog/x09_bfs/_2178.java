@@ -33,7 +33,7 @@ public class _2178 {
             }
         }
 
-        // 4. 탐색하기
+        // 4. 결과 출력하기
         bw.write(String.valueOf(bfs(0, 0)));
         bw.flush();
     }
