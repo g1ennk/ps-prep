@@ -3,7 +3,7 @@ set -euo pipefail
 
 SRC_ROOT="src"
 PKG_BASE="barkingDog"
-SECTION="x09_bfs"
+SECTION="x0B_recursion"
 FORCE=0
 
 usage() {
