@@ -1,4 +1,4 @@
-package basic_algo_lecture.x01_basic;
+package basic_algo_lecture.x01_basic.basic;
 
 import java.io.BufferedWriter;
 import java.io.IOException;

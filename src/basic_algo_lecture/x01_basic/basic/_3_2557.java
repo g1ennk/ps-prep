@@ -1,7 +1,6 @@
-package basic_algo_lecture.x01_basic;
+package basic_algo_lecture.x01_basic.basic;
 
 import java.io.*;
-import java.util.StringTokenizer;
 
 // Hello World
 public class _3_2557 {

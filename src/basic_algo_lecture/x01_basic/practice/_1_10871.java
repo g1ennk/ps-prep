@@ -1,4 +1,4 @@
-package basic_algo_lecture.x01_basic;
+package basic_algo_lecture.x01_basic.practice;
 
 import java.io.*;
 import java.util.StringJoiner;
