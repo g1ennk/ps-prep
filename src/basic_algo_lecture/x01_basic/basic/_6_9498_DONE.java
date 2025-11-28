@@ -3,7 +3,7 @@ package basic_algo_lecture.x01_basic.basic;
 import java.io.*;
 
 // 시험 성적
-public class _6_9498 {
+public class _6_9498_DONE {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));

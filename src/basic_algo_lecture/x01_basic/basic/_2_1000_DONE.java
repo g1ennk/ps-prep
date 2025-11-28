@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.StringTokenizer;
 
 // A+B
-public class _2_1000 {
+public class _2_1000_DONE {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));

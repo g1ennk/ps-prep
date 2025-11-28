@@ -5,7 +5,7 @@ import java.util.StringJoiner;
 import java.util.StringTokenizer;
 
 // X보다 작은 수
-public class _1_10871 {
+public class _1_10871_DONE {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));

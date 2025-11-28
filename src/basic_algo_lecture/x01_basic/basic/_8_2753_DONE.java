@@ -3,7 +3,7 @@ package basic_algo_lecture.x01_basic.basic;
 import java.io.*;
 
 // 윤년
-public class _8_2753 {
+public class _8_2753_DONE {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));

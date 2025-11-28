@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 
 // 고양이
-public class _4_10171 {
+public class _4_10171_DONE {
     public static void main(String[] args) throws IOException {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         StringBuffer sb = new StringBuffer();
