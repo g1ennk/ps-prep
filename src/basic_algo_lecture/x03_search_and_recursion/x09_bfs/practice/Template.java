@@ -20,9 +20,6 @@ public class Template {
 
  */
 
-/* 입출력
- */
-
 /* 메모
 
  */
