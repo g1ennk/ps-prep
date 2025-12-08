@@ -1,4 +1,4 @@
-package basic_algo_lecture.x03_search_and_recursion.x09_bfs.practice;
+package basic_algo_lecture.x03_search_and_recursion.x09_bfs.level2;
 
 import java.io.*;
 import java.util.ArrayDeque;

@@ -1,4 +1,4 @@
-package basic_algo_lecture.x03_search_and_recursion.x09_bfs.practice;
+package basic_algo_lecture;
 
 import java.io.*;
 
@@ -6,19 +6,17 @@ import java.io.*;
 public class Template {
 
 
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
 
 
         bw.flush();
     }
 
 }
-
-/* 문제
-
- */
 
 /* 메모
 
