@@ -6,7 +6,7 @@ import java.util.Queue;
 import java.util.StringTokenizer;
 
 // 벽 부수고 이동하기 (TRY:1)
-public class _11_2206_FAIL {
+public class BOJ_2206_벽_부수고_이동하기_1_FAIL {
 
     // 맵 관련
     static final int WALL = 1;
