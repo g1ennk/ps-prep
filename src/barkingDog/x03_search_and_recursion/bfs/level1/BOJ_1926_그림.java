@@ -4,9 +4,9 @@ import java.io.*;
 import java.util.ArrayDeque;
 import java.util.StringTokenizer;
 
-public class BOJ_1926_그림_3 {
+public class BOJ_1926_그림 {
 
-    static final int PAINT = 1;
+    static final int PAINT = 1; // 그림은 1로 정의
     static final int[][] DIR4 = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
 
     static int n; // 세로, y
@@ -18,12 +18,16 @@ public class BOJ_1926_그림_3 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
+        // 1. 크기 입력
         StringTokenizer st = new StringTokenizer(br.readLine());
         n = Integer.parseInt(st.nextToken());
         m = Integer.parseInt(st.nextToken());
+
+        // 2. 초기화
         board = new int[n][m];
         visited = new boolean[n][m];
 
+        // 3. 정보 입력
         for (int y = 0; y < n; y++) {
             st = new StringTokenizer(br.readLine());
             for (int x = 0; x < m; x++) {
@@ -31,21 +35,23 @@ public class BOJ_1926_그림_3 {
             }
         }
 
+        // 4. 출력
         bw.write(solution());
         bw.flush();
     }
 
     static String solution() {
-        int count = 0;
+        // 1. 초기화
+        int count = 0; // 그림의 개수
         int maxSize = 0; // 그림이 하나도 없는 경우 가장 넓은 그림의 넓이는 0
 
-        // 전체 탐색
+        // 2. 전체 탐색하며 미방문 그림 방문
         for (int y = 0; y < n; y++) {
             for (int x = 0; x < m; x++) {
-                // 입력과 동시에 그림 확인
+                // 그림이고 미방문이라면
                 if (board[y][x] == PAINT && !visited[y][x]) {
-                    maxSize = Math.max(maxSize, bfs(y, x));
                     count++;
+                    maxSize = Math.max(maxSize, bfs(y, x)); // bfs 탐색 후 갱신 처리
                 }
             }
         }
@@ -55,7 +61,7 @@ public class BOJ_1926_그림_3 {
 
     static int bfs(int sy, int sx) {
         ArrayDeque<int[]> q = new ArrayDeque<>();
-        int size = 1;
+        int size = 1; // 그림의 크기는 1부터 시작
 
         // 초기 방문 처리
         visited[sy][sx] = true;
@@ -64,13 +70,11 @@ public class BOJ_1926_그림_3 {
         // 탐색
         while (!q.isEmpty()) {
             int[] cur = q.poll();
-            int cy = cur[0];
-            int cx = cur[1];
+            int cy = cur[0], cx = cur[1];
 
             // 4방향
             for (int[] d : DIR4) {
-                int ny = cy + d[0];
-                int nx = cx + d[1];
+                int ny = cy + d[0], nx = cx + d[1];
 
                 // 예외 처리
                 if (ny < 0 || ny >= n || nx < 0 || nx >= m) continue;
