@@ -1,33 +1,35 @@
 package barkingDog.x03_search_and_recursion.bfs.level1;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayDeque;
 import java.util.StringTokenizer;
 
 public class BOJ_1926_그림 {
 
-    static final int PAINT = 1; // 그림은 1로 정의
+    static final int PAINTED = 1;
     static final int[][] DIR4 = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
 
-    static int n; // 세로, y
-    static int m; // 가로, x
+    static int n, m;
     static int[][] board;
     static boolean[][] visited;
+    static int pictureCount = 0;
+    static int maxArea = 0;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        // 1. 크기 입력
+        // 1. 세로 크기 n, 가로 크기 m 입력
         StringTokenizer st = new StringTokenizer(br.readLine());
-        n = Integer.parseInt(st.nextToken());
-        m = Integer.parseInt(st.nextToken());
+        n = Integer.parseInt(st.nextToken()); // rows - y - 행
+        m = Integer.parseInt(st.nextToken()); // cols - x - 열
 
         // 2. 초기화
-        board = new int[n][m];
+        board = new int[n][m]; // y-n, x-m
         visited = new boolean[n][m];
 
-        // 3. 정보 입력
+        // 3. 그림 정보 입력
         for (int y = 0; y < n; y++) {
             st = new StringTokenizer(br.readLine());
             for (int x = 0; x < m; x++) {
@@ -35,60 +37,53 @@ public class BOJ_1926_그림 {
             }
         }
 
-        // 4. 출력
-        bw.write(solution());
-        bw.flush();
-    }
-
-    static String solution() {
-        // 1. 초기화
-        int count = 0; // 그림의 개수
-        int maxSize = 0; // 그림이 하나도 없는 경우 가장 넓은 그림의 넓이는 0
-
-        // 2. 전체 탐색하며 미방문 그림 방문
+        // 4. 탐색하면서 그림의 개수와 최대 넓이 구하기
         for (int y = 0; y < n; y++) {
             for (int x = 0; x < m; x++) {
-                // 그림이고 미방문이라면
-                if (board[y][x] == PAINT && !visited[y][x]) {
-                    count++;
-                    maxSize = Math.max(maxSize, bfs(y, x)); // bfs 탐색 후 갱신 처리
+                if (board[y][x] == PAINTED && !visited[y][x]) {
+                    pictureCount++;
+                    maxArea = Math.max(maxArea, bfsArea(y, x));
                 }
             }
         }
 
-        return count + "\n" + maxSize;
+        // 5. 그림의 개수, 가장 넓은 그림의 넓이를 출력
+        System.out.println(pictureCount + "\n" + maxArea);
     }
 
-    static int bfs(int sy, int sx) {
-        ArrayDeque<int[]> q = new ArrayDeque<>();
-        int size = 1; // 그림의 크기는 1부터 시작
+    // BFS로 그림의 넓이 구하기
+    static int bfsArea(int y, int x) {
+        ArrayDeque<int[]> queue = new ArrayDeque<>();
 
         // 초기 방문 처리
-        visited[sy][sx] = true;
-        q.offer(new int[]{sy, sx});
+        visited[y][x] = true;
+        queue.offer(new int[]{y, x});
+        int area = 1; // 시작점 포함
 
         // 탐색
-        while (!q.isEmpty()) {
-            int[] cur = q.poll();
-            int cy = cur[0], cx = cur[1];
+        while (!queue.isEmpty()) {
+            int[] curr = queue.poll();
+            int cy = curr[0];
+            int cx = curr[1];
 
             // 4방향
-            for (int[] d : DIR4) {
-                int ny = cy + d[0], nx = cx + d[1];
+            for (int[] d4 : DIR4) {
+                int ny = cy + d4[0];
+                int nx = cx + d4[1];
 
-                // 예외 처리
+                // 체크
                 if (ny < 0 || ny >= n || nx < 0 || nx >= m) continue;
                 if (visited[ny][nx]) continue;
-                if (board[ny][nx] != PAINT) continue;
+                if (board[ny][nx] != PAINTED) continue;
 
-                // 방문 처리
+                // 방문처리
                 visited[ny][nx] = true;
-                q.offer(new int[]{ny, nx});
-                size++;
+                queue.offer(new int[]{ny, nx});
+                area++;
             }
         }
 
-        return size;
+        return area;
     }
 
 }
