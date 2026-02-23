@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayDeque;
 import java.util.StringTokenizer;
 
-public class BOJ_1926_그림 {
+public class BOJ_1926_그림_1 {
 
     static final int PAINTED = 1;
     static final int[][] DIR4 = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
